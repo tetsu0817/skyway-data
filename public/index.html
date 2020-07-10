@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <title>SkyWay - P2P Data example</title> -->
-    <title>TEST-SkyWay - P2P Data example testbranch-3l</title>
+    <title>TEST-SkyWay - P2P Data example testbranch-5</title>
     <!-- <link rel="stylesheet" href="../_shared/style.css"> -->
     <link rel="stylesheet" href="../shared/style.css">
   </head>
   <body>
     <div class="container">
       <!-- <h1 class="heading">P2P Data example</h1> -->
-      <h1 class="heading">TEST-P2P Data example  -  testbranch-3l</h1>
+      <h1 class="heading">TEST-P2P Data example  -  testbranch-5</h1>
       <p class="note">
         Enter remote peer ID to connect.
       </p>
@@ -34,13 +34,13 @@
       <button id="start-btn">start</button>
       <button id="stop-btn">stop</button>
       <div id="result-div"></div>
-      <div id="result-div2"></div>
+      <!-- <div id="result-div2"></div> -->
 
       <script>
         const startBtn = document.querySelector('#start-btn');
         const stopBtn = document.querySelector('#stop-btn');
         const resultDiv = document.querySelector('#result-div');
-        const resultDiv2 = document.querySelector('#result-div2');
+        // const resultDiv2 = document.querySelector('#result-div2');
 
         SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
         const recognition = new SpeechRecognition();
@@ -63,10 +63,11 @@
               interimTranscript = transcript;
             }
           }
-          resultDiv.innerHTML = finalTranscript + 'abc' + '<i style="color:#ddd;">' + interimTranscript + '</i>';
-          const aaa = resultDiv.value;
+          // resultDiv.innerHTML = finalTranscript  'abc' + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          // const aaa = resultDiv.value;
           // localText.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
-          resultDiv2.innerHTML = finalTranscript + 'def' + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          // resultDiv2.innerHTML = finalTranscript + 'def' + '<i style="color:#ddd;">' + interimTranscript + '</i>';
         }
 
         startBtn.onclick = () => {
