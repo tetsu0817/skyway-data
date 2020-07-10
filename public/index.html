@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <title>SkyWay - P2P Data example</title> -->
-    <title>TEST-SkyWay - P2P Data example testbranch-2</title>
+    <title>TEST-SkyWay - P2P Data example testbranch-3</title>
     <!-- <link rel="stylesheet" href="../_shared/style.css"> -->
     <link rel="stylesheet" href="../shared/style.css">
   </head>
   <body>
     <div class="container">
       <!-- <h1 class="heading">P2P Data example</h1> -->
-      <h1 class="heading">TEST-P2P Data example  -  testbranch-2</h1>
+      <h1 class="heading">TEST-P2P Data example  -  testbranch-3</h1>
       <p class="note">
         Enter remote peer ID to connect.
       </p>
@@ -33,12 +33,14 @@
 
       <button id="start-btn">start</button>
       <button id="stop-btn">stop</button>
-      <div id="result-div"></div>
+      <!-- <div id="result-div"></div> -->
+      <div id="result-div-2"></div>
 
       <script>
         const startBtn = document.querySelector('#start-btn');
         const stopBtn = document.querySelector('#stop-btn');
-        const resultDiv = document.querySelector('#result-div');
+        // const resultDiv = document.querySelector('#result-div');
+        const resultDiv-2 = document.querySelector('#result-div-2');
 
         SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
         let recognition = new SpeechRecognition();
@@ -48,6 +50,8 @@
         recognition.continuous = true;
 
         let finalTranscript = ''; // 確定した(黒の)認識結果
+
+        // const localText = document.getElementById('js-local-text');
 
         recognition.onresult = (event) => {
           let interimTranscript = ''; // 暫定(灰色)の認識結果
@@ -59,7 +63,9 @@
               interimTranscript = transcript;
             }
           }
-          resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          // resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          // localText.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          resultDiv-2.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
         }
 
         startBtn.onclick = () => {
