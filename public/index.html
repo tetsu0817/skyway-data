@@ -33,14 +33,14 @@
 
       <button id="start-btn">start</button>
       <button id="stop-btn">stop</button>
-      <!-- <div id="result-div"></div> -->
-      <div id="result-div-2"></div>
+      <div id="result-div"></div>
+      <!-- <div id="result-div2"></div> -->
 
       <script>
         const startBtn = document.querySelector('#start-btn');
         const stopBtn = document.querySelector('#stop-btn');
-        // const resultDiv = document.querySelector('#result-div');
-        const resultDiv-2 = document.querySelector('#result-div-2');
+        const resultDiv = document.querySelector('#result-div');
+        // const resultDiv2 = document.querySelector('#result-div2');
 
         SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
         let recognition = new SpeechRecognition();
@@ -63,9 +63,9 @@
               interimTranscript = transcript;
             }
           }
-          // resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
           // localText.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
-          resultDiv-2.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
+          // resultDiv2.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
         }
 
         startBtn.onclick = () => {
