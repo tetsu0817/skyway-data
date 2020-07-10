@@ -87,7 +87,8 @@ const Peer = window.Peer;
     function onClickSend() {
       // const data = localText.value;
       // localText.value = localText.value + "xyz";
-      localText.value = localText.value + resultDiv.value;
+      // localText.value = localText.value + resultDiv.value;
+      localText.value = localText.value + aaa;
       const data = localText.value;
       // const data = "abc";
       // const data = 'xyz' + localText.value;
