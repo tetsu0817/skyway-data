@@ -86,8 +86,10 @@ const Peer = window.Peer;
 
     function onClickSend() {
       // const data = localText.value;
+      localText.value = localText.value + "xyz";
+      const data = localText.value;
       // const data = "abc";
-      const data = 'xyz' + localText.value;
+      // const data = 'xyz' + localText.value;
       dataConnection.send(data);
 
       messages.textContent += `You: ${data}\n`;
